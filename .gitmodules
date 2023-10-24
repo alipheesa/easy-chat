@@ -1,0 +1,9 @@
+[submodule "easy-chat-client"]
+	path = easy-chat-client
+	url = https://github.com/alipheesa/easy-chat-client
+[submodule "easy-chat-core"]
+	path = easy-chat-core
+	url = https://github.com/alipheesa/easy-chat-core
+[submodule "easy-chat-devops"]
+	path = easy-chat-devops
+	url = https://github.com/alipheesa/easy-chat-devops
