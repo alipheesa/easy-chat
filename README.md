@@ -29,7 +29,7 @@ $ docker compose -f devops/docker-compose.dev.yml --project-directory . up -d --
 $ docker compose -f devops/docker-compose.prod.yml --project-directory . up -d --build
 ```
 
-Note the amount of resources elasticsearch consumes on startup. This can prevent system from booting successfully on weak machines, especially in development environment. The solution is to restart crashed services one-by-one manually, when elasticsearch resource consumption is settled.
+Note the amount of resources elasticsearch consumes on startup. This can prevent system from booting successfully on weak machines, especially in development environment. Defining restart policy in docker-compose solves the issue, keep in mind that you might want to disable it in some situations.
 
 
 ## Advanced project setup
