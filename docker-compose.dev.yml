@@ -71,7 +71,7 @@ services:
       - 6379:6379
     command: redis-server /usr/local/etc/redis/redis.dev.conf
     volumes:
-      - ./redis/redis.dev.conf:/usr/local/etc/redis/redis.dev.conf
+      - ./devops/redis/redis.dev.conf:/usr/local/etc/redis/redis.dev.conf
     healthcheck:
       test: redis-cli -a $REDIS_PASSWORD --raw incr ping
       interval: 30s

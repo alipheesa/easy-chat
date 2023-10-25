@@ -7,7 +7,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile.prod
-    restart: unless-stopped
+    restart: on-failure
     depends_on:
       - core
     volumes:
@@ -65,7 +65,7 @@ services:
       - 6379
     command: redis-server /usr/local/etc/redis/redis.prod.conf
     volumes:
-      - ./redis/redis.prod.conf:/usr/local/etc/redis/redis.prod.conf
+      - ./devops/redis/redis.prod.conf:/usr/local/etc/redis/redis.prod.conf
     healthcheck:
       test: redis-cli -a $REDIS_PASSWORD --raw incr ping
       interval: 30s
@@ -117,7 +117,7 @@ services:
       
   nginx:
     container_name: nginx
-    build: ./nginx
+    build: ./devops/nginx
     restart: unless-stopped
     ports:
       - 80:80
