@@ -11,6 +11,7 @@ To setup the project, simply clone the git repo:
 ```console
 $ git clone https://github.com/alipheesa/easy-chat.git
 $ cd easy-chat
+$ git submodule update --init --remote
 ```
 You are done!
 Note that the whole env_files directory with sample files is included, which is considered security issue. You might want to add env_files folder in .gitignore later.
@@ -18,14 +19,14 @@ Note that the whole env_files directory with sample files is included, which is 
 ### Development environment (docker-compose)
 
 ```console
-$ docker compose -f docker-compose.dev.yml -d --build
+$ docker compose -f devops/docker-compose.dev.yml --project-directory . up -d --build
 ```
 
 
 ### Production environment (docker-compose)
 
 ```console
-$ docker compose -f docker-compose.prod.yml -d --build
+$ docker compose -f devops/docker-compose.prod.yml --project-directory . up -d --build
 ```
 
 Note the amount of resources elasticsearch consumes on startup. This can prevent system from booting successfully on weak machines, especially in development environment. The solution is to restart crashed services one-by-one manually, when elasticsearch resource consumption is settled.
