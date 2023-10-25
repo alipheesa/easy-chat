@@ -7,7 +7,7 @@ This is the first pet project I built, and I learned a lot from it. It isn't \*p
 
 ## Quickstart
 
-To setup the project, simply clone the git repo:
+To setup the project, simply clone the git repo and populate its submodules:
 ```console
 $ git clone https://github.com/alipheesa/easy-chat.git
 $ cd easy-chat
