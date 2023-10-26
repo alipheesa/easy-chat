@@ -160,9 +160,8 @@ As for DevOps part, at the moment of publishing this code the only things left t
 * Elastic
   
 In production environment, there is one additional service for nginx, but frontend container should be removed after successfull build, thus giving us same 7 running containers in total.
-Some crucial for modern workflows tools and services are still being tested and left unpublished, including *Jenkins* and *Kubernetes*.
 
-There is almost nothing to conclude until I posted Jenkinsfile, kubernetes manifests and helm charts, except one thing:
+Things to conclude before I posted Jenkinsfiles, kubernetes manifests and helm charts:
 * Always use the least priveleged user in Dockerfiles, do not manage anything as root if it can be done as simple user.
 
 
